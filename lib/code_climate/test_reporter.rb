@@ -5,6 +5,8 @@ module CodeClimate
       if run?
         require "simplecov"
         ::SimpleCov.add_filter 'vendor'
+        ::SimpleCov.add_filter '/app/models/crawler_modules/'
+        ::SimpleCov.add_filter '/app/models/parsers/'
         ::SimpleCov.formatter = Formatter
         ::SimpleCov.start(configuration.profile)
       end
